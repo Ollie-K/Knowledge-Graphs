@@ -1,0 +1,46 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<http://www.city.ac.uk/ds/inm713/ollie_keers/Country> owl:equivalentClass <http://www.co-ode.org/ontologies/pizza#Country> .
+
+<http://www.city.ac.uk/ds/inm713/ollie_keers/Food> owl:equivalentClass <http://www.co-ode.org/ontologies/pizza#Food> .
+
+<http://www.city.ac.uk/ds/inm713/ollie_keers/Margherita> owl:equivalentClass <http://www.co-ode.org/ontologies/pizza#Margherita> .
+
+<http://www.city.ac.uk/ds/inm713/ollie_keers/Vegetarian_item> owl:equivalentClass <http://www.co-ode.org/ontologies/pizza#VegetarianPizza> .
+
+<http://www.city.ac.uk/ds/inm713/ollie_keers/hasBase> owl:equivalentProperty <http://www.co-ode.org/ontologies/pizza#hasBase> .
+
+<http://www.city.ac.uk/ds/inm713/ollie_keers/hasTopping> owl:equivalentProperty <http://www.co-ode.org/ontologies/pizza#hasTopping> .
+
+<http://www.city.ac.uk/ds/inm713/ollie_keers/isBaseOf> owl:equivalentProperty <http://www.co-ode.org/ontologies/pizza#isBaseOf> .
+
+<http://www.city.ac.uk/ds/inm713/ollie_keers/isToppingOf> owl:equivalentProperty <http://www.co-ode.org/ontologies/pizza#isToppingOf> .
+
+<http://www.co-ode.org/ontologies/pizza#Country> owl:equivalentClass <http://www.city.ac.uk/ds/inm713/ollie_keers/Country> .
+
+<http://www.co-ode.org/ontologies/pizza#Food> owl:equivalentClass <http://www.city.ac.uk/ds/inm713/ollie_keers/Food> .
+
+<http://www.co-ode.org/ontologies/pizza#Margherita> owl:equivalentClass <http://www.city.ac.uk/ds/inm713/ollie_keers/Margherita> .
+
+<http://www.co-ode.org/ontologies/pizza#VegetarianPizza> owl:equivalentClass <http://www.city.ac.uk/ds/inm713/ollie_keers/Vegetarian_item> .
+
+<http://www.co-ode.org/ontologies/pizza#hasBase> owl:equivalentProperty <http://www.city.ac.uk/ds/inm713/ollie_keers/hasBase> .
+
+<http://www.co-ode.org/ontologies/pizza#hasTopping> owl:equivalentProperty <http://www.city.ac.uk/ds/inm713/ollie_keers/hasTopping> .
+
+<http://www.co-ode.org/ontologies/pizza#isBaseOf> owl:equivalentProperty <http://www.city.ac.uk/ds/inm713/ollie_keers/isBaseOf> .
+
+<http://www.co-ode.org/ontologies/pizza#isToppingOf> owl:equivalentProperty <http://www.city.ac.uk/ds/inm713/ollie_keers/isToppingOf> .
+
+<http://www.city.ac.uk/ds/inm713/ollie_keers/hasIngredient> owl:equivalentProperty <http://www.co-ode.org/ontologies/pizza#hasIngredient>,
+        <http://www.co-ode.org/ontologies/pizza#isIngredientOf> .
+
+<http://www.city.ac.uk/ds/inm713/ollie_keers/isIngredientOf> owl:equivalentProperty <http://www.co-ode.org/ontologies/pizza#hasIngredient>,
+        <http://www.co-ode.org/ontologies/pizza#isIngredientOf> .
+
+<http://www.co-ode.org/ontologies/pizza#hasIngredient> owl:equivalentProperty <http://www.city.ac.uk/ds/inm713/ollie_keers/hasIngredient>,
+        <http://www.city.ac.uk/ds/inm713/ollie_keers/isIngredientOf> .
+
+<http://www.co-ode.org/ontologies/pizza#isIngredientOf> owl:equivalentProperty <http://www.city.ac.uk/ds/inm713/ollie_keers/hasIngredient>,
+        <http://www.city.ac.uk/ds/inm713/ollie_keers/isIngredientOf> .
+

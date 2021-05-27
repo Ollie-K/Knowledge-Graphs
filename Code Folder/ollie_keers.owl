@@ -1,0 +1,1081 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.city.ac.uk/ds/inm713/ollie_keers/"
+     xml:base="http://www.city.ac.uk/ds/inm713/ollie_keers/"
+     xmlns:ok="http://www.city.ac.uk/ds/inm713/ollie_keers/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:opla-sd="http://ontologydesignpatterns.org/opla-sd#">
+    <owl:Ontology rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/">
+        <creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ollie Keers</creator>
+        <rdfs:comment>Ontology describing pizza restaurants and their products</rdfs:comment>
+        <rdfs:label>ollie_keers</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologydesignpatterns.org/opla-sd#entityPosition -->
+
+    <owl:AnnotationProperty rdf:about="http://ontologydesignpatterns.org/opla-sd#entityPosition"/>
+    
+
+
+    <!-- http://ontologydesignpatterns.org/opla-sd#entityPositionX -->
+
+    <owl:AnnotationProperty rdf:about="http://ontologydesignpatterns.org/opla-sd#entityPositionX"/>
+    
+
+
+    <!-- http://ontologydesignpatterns.org/opla-sd#entityPositionY -->
+
+    <owl:AnnotationProperty rdf:about="http://ontologydesignpatterns.org/opla-sd#entityPositionY"/>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/creator"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/hasAddress -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/hasAddress">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Establishment"/>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Address"/>
+        <rdfs:comment>At this particular address</rdfs:comment>
+        <rdfs:label>hasAddress</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/hasBase -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/hasBase">
+        <rdfs:subPropertyOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/hasIngredient"/>
+        <owl:inverseOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/isBaseOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Base"/>
+        <rdfs:comment>This menu item is made with this topping</rdfs:comment>
+        <rdfs:label>hasBase</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/hasCurrency -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/hasCurrency">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Country"/>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Currency"/>
+        <rdfs:comment>The type of money used in a country</rdfs:comment>
+        <rdfs:label>hasCurrency</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/hasIngredient -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/hasIngredient">
+        <owl:inverseOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/isIngredientOf"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Constituent"/>
+        <rdfs:comment>This menu item has this ingredient</rdfs:comment>
+        <rdfs:label>hasIngredient</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/hasSauce -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/hasSauce">
+        <rdfs:subPropertyOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/hasIngredient"/>
+        <owl:inverseOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/isSauceOf"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Sauce"/>
+        <rdfs:comment>This menu item is made with this sauce</rdfs:comment>
+        <rdfs:label>hasSauce</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/hasTopping -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/hasTopping">
+        <rdfs:subPropertyOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/hasIngredient"/>
+        <owl:inverseOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/isToppingOf"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Topping"/>
+        <rdfs:comment>This menu item is made with this topping</rdfs:comment>
+        <rdfs:label>hasTopping</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/inCity -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/inCity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Address"/>
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Establishment"/>
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Postcode"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/City"/>
+        <rdfs:comment>located within this city</rdfs:comment>
+        <rdfs:label>inCity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/inCountry -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/inCountry">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Address"/>
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/City"/>
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Establishment"/>
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Postcode"/>
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/State"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Country"/>
+        <rdfs:comment>Located within this country</rdfs:comment>
+        <rdfs:label>inCountry</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/inState -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/inState">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Address"/>
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/City"/>
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Establishment"/>
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Postcode"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/State"/>
+        <rdfs:comment>located within this state</rdfs:comment>
+        <rdfs:label>inState</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/isBaseOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/isBaseOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/isIngredientOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Base"/>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+        <rdfs:comment>This is the base of a particular menu item</rdfs:comment>
+        <rdfs:label>isBaseOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/isIngredientOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/isIngredientOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Constituent"/>
+        <rdfs:comment>This is part of a particular menu item</rdfs:comment>
+        <rdfs:label>isIngredientOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/isSauceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/isSauceOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/isIngredientOf"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Sauce"/>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+        <rdfs:comment>This is a sauce of a particular menu item</rdfs:comment>
+        <rdfs:label>isSauceOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/isToppingOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/isToppingOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/isIngredientOf"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Topping"/>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+        <rdfs:comment>This is a topping of a particular menu item</rdfs:comment>
+        <rdfs:label>isToppingOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/locatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/locatedIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Establishment"/>
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Place"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Place"/>
+        <rdfs:comment>Describes where an entity can be found</rdfs:comment>
+        <rdfs:label>locatedIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/postcode -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/postcode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Address"/>
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Establishment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Postcode"/>
+        <rdfs:comment>located within this postcode</rdfs:comment>
+        <rdfs:label>inPostcode</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/sells -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/sells">
+        <owl:inverseOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/soldBy"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Establishment"/>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+        <rdfs:comment>An establishment that sells this menu item</rdfs:comment>
+        <rdfs:label>sells</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/soldBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/soldBy">
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Establishment"/>
+        <rdfs:comment>This item is sold by the establishment</rdfs:comment>
+        <rdfs:label>soldBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/establishmentName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/establishmentName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Establishment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20.019736481299788</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">650.2209168776297</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>The name of an establishment</rdfs:comment>
+        <rdfs:label>establishmentName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/hasPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/hasPrice">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">799.5986324976263</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">730.3023639568161</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>The price of an item</rdfs:comment>
+        <rdfs:label>hasPrice</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/itemDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/itemDescription">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Metadata about a menu item</rdfs:comment>
+        <rdfs:label>itemDescription</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/itemName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/itemName">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The name of a menu item</rdfs:comment>
+        <rdfs:label>itemName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Address -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Address">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Place"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">249.99696496007306</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">409.9984373274489</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>The location of a building</rdfs:comment>
+        <rdfs:label>Address</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Base -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Base">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Constituent"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">790.3214994362862</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">509.51344791159795</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>The bottom of a pizza</rdfs:comment>
+        <rdfs:label>Base</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Bianca -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Bianca">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/hasSauce"/>
+                                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Tomato_sauce"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/hasTopping"/>
+                                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Tomato"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">460.43859472338033</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">749.8994149797097</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A purchasable item that contains no tomato sauce or tomato</rdfs:comment>
+        <rdfs:label>Bianca</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Cheese -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Cheese">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Topping"/>
+        <owl:disjointWith rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Fish"/>
+        <owl:disjointWith rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Meat"/>
+        <owl:disjointWith rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Vegetable"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">530.4363640662641</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">50.41815905138776</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A topping made from milk</rdfs:comment>
+        <rdfs:label>Cheese</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Cheesy_item -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Cheesy_item">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/hasTopping"/>
+                        <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Cheese"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+        <owl:disjointWith rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Vegan_item"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">610.1682968449966</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">919.8158709770069</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A purchasable item that contains cheese</rdfs:comment>
+        <rdfs:label>Cheesy_item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/City -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/City">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Place"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">39.57616075509213</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">379.88600352829906</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>An urban area consisting of a number of postcodes</rdfs:comment>
+        <rdfs:label>City</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Constituent -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Constituent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/isIngredientOf"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Food"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">380.04250495003316</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">420.3352106749926</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>An ingredient of a menu item. May also be available for purchase individually.</rdfs:comment>
+        <rdfs:label>Constituent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Country -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Country">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Place"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20.18887333085001</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">130.3268589014765</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A location consisting of a number of states</rdfs:comment>
+        <rdfs:label>Country</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Currency -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Currency">
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10.235565836101756</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">20.17785890036862</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A type of money</rdfs:comment>
+        <rdfs:label>Currency</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/DineIn -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/DineIn">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Establishment"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">300.21166805091195</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1030.239447142084</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A business that sells menu items for consumption on the premises</rdfs:comment>
+        <rdfs:label>DineIn</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Establishment -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Establishment">
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">149.50257679381525</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">930.4717796142958</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A business that sells menu items</rdfs:comment>
+        <rdfs:label>Establishment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Fish -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Fish">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Topping"/>
+        <owl:disjointWith rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Meat"/>
+        <owl:disjointWith rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Vegetable"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">619.8614676423235</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">129.7355426394579</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A topping that was part of an animal that lived in water</rdfs:comment>
+        <rdfs:label>Fish</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Fishy_item -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Fishy_item">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/hasTopping"/>
+                        <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Fish"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+        <owl:disjointWith rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Vegan_item"/>
+        <owl:disjointWith rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Vegetarian_item"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">460.4800844039021</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">959.9394427267074</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A purchasable item that contains fish</rdfs:comment>
+        <rdfs:label>Fishy_item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Food -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Food">
+        <rdfs:comment>Something that can be eaten</rdfs:comment>
+        <rdfs:label>Food</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Margherita -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Margherita">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Vegetarian_item"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/hasSauce"/>
+                        <owl:allValuesFrom rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Tomato_sauce"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/hasTopping"/>
+                        <owl:allValuesFrom rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Mozzarella"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Cheesy_item"/>
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Vegetarian_item"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">670.039991421075</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1049.5049351184084</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Meat -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Meat">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Topping"/>
+        <owl:disjointWith rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Vegetable"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">680.1412797584259</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">229.95558959751418</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A topping that was part of an animal that lives on land</rdfs:comment>
+        <rdfs:label>Meat</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Meaty_item -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Meaty_item">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/hasTopping"/>
+                        <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Meat"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+        <owl:disjointWith rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Vegan_item"/>
+        <owl:disjointWith rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Vegetarian_item"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">499.805266016161</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1009.9366917926694</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A purchasable item that contains meat</rdfs:comment>
+        <rdfs:label>Meaty_item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/hasPrice"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Food"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">570.1074658087309</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">610.1332657704586</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>Something that is available for purchase from an establishment</rdfs:comment>
+        <rdfs:label>Menu_Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Mozzarella -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Mozzarella">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Cheese"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">729.7849363102716</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">40.18412263263567</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A soft cheese</rdfs:comment>
+        <rdfs:label>Mozzarella</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Place -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Place">
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">209.9011309904265</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">19.79753005577993</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A location</rdfs:comment>
+        <rdfs:label>Place</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Postcode -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Postcode">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Place"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">99.77562975031333</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">449.5781194806232</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A location consisting of a number of addresses</rdfs:comment>
+        <rdfs:label>Postcode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Sauce -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Sauce">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Constituent"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">779.766944045985</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">359.6676782099393</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A viscous liquid used to moisten food and add flavour</rdfs:comment>
+        <rdfs:label>Sauce</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/State -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/State">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Place"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">29.93842380050023</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">309.8006391230992</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A location consisting of a number of urban and rural areas</rdfs:comment>
+        <rdfs:label>State</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/TakeAway -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/TakeAway">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Establishment"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">19.96101022653488</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1029.8757096300474</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A business that sells menu items for consumption off premises</rdfs:comment>
+        <rdfs:label>TakeAway</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Tomato -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Tomato">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Vegetable"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">379.64928368979133</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">190.40929724807768</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A topping made from the fruit of the tomato plant.</rdfs:comment>
+        <rdfs:label>Tomato</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Tomato_sauce -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Tomato_sauce">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Sauce"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">749.6584763143978</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">180.30977077538165</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A paste made from pureed tomatoes</rdfs:comment>
+        <rdfs:label>Tomato_sauce</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Topping -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Topping">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Constituent"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">520.2923642580904</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">260.3896426369746</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>An ingredient placed on top of a pizza</rdfs:comment>
+        <rdfs:label>Topping</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Vegan_item -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Vegan_item">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Vegetarian_item"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/hasTopping"/>
+                                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Cheese"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Vegetarian_item"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">759.6398067981777</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1009.5724807172455</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:label>Vegan_item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Vegetable -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Vegetable">
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Topping"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">390.31130987627535</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">79.52682834261805</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A topping that was part of a plant</rdfs:comment>
+        <rdfs:label>Vegetable</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.city.ac.uk/ds/inm713/ollie_keers/Vegetarian_item -->
+
+    <owl:Class rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Vegetarian_item">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/hasTopping"/>
+                                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Fish"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/hasTopping"/>
+                                <owl:someValuesFrom rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Meat"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.city.ac.uk/ds/inm713/ollie_keers/Menu_Item"/>
+        <opla-sd:entityPosition>
+            <rdf:Description>
+                <opla-sd:entityPositionX rdf:datatype="http://www.w3.org/2001/XMLSchema#double">730.4495796371334</opla-sd:entityPositionX>
+                <opla-sd:entityPositionY rdf:datatype="http://www.w3.org/2001/XMLSchema#double">879.7248128646067</opla-sd:entityPositionY>
+                <rdfs:comment xml:lang="en">This is an entity positioning annotation generated by CoModIDE (https://comodide.com/). Removing this annotation will break rendering the CoModIDE schema diagram view.</rdfs:comment>
+            </rdf:Description>
+        </opla-sd:entityPosition>
+        <rdfs:comment>A purchasable item that contains no meat</rdfs:comment>
+        <rdfs:label>Vegetarian_item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Address"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/City"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Country"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Postcode"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/State"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Base"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Sauce"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Topping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Currency"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Establishment"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Food"/>
+            <rdf:Description rdf:about="http://www.city.ac.uk/ds/inm713/ollie_keers/Place"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
